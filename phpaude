@@ -1,0 +1,39 @@
+<<?php 
+$sql = "SELECT date_trajet, id_site, heure_trajet, id_site_arrive, id_salarie, nombre_passagers FROM \"Trajet\" WHERE id_salarie='".$_POST['identifiant']."'"; // Déclaration de l'adresse de destination.
+$result = $connexion -> query($sql) or die("erreur dans l'identifiant sql '$sql'");
+
+echo "<table>";
+echo "
+<thead>
+			<tr>
+					<th>&nbsp;</th>
+					<th>Date Depart</th>
+					<th>Ville Depart</th>
+					<th>Heure Depart</th>
+					<thVille Arrivee</th>
+					<th>Nom</th>
+					<th>Statut</th>
+					<th>Telephone</th>
+					<th>Places libres</th>
+
+			</tr>
+	</thead>
+";
+while( $res = $result->fetch()){
+
+	echo "<tr>";
+	echo "<td>&nbsp;</td>";
+	echo "<td>$res['date_trajet']</td>";
+	echo "<td>$res['id_site']</td>";
+	echo "<td>$res['heure_trajet']</td>";
+	echo "<td>$res['id_site_arrive']</td>";
+	echo "<td>$res['id_salarie']</td>";
+	echo "<td>$res['id_salarie']</td>";
+	echo "<td>$res['id_salarie']</td>";
+	echo "<td>$res['nombre_passagers']</td>";
+	echo "</tr>";
+}
+
+echo "</table>";
+ ?>
+
